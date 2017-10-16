@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="OGRE, 游戏引擎" />
 
 
 
@@ -84,16 +84,26 @@
 
 
 
-<meta name="description" content="You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://sunwayliving.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.">
+<meta name="description" content="OGRE官网提供了各种开发平台下的搭建步骤，并且很多依赖都能够下载到。但是组织不够清晰，需要花一些时间去理清思路。这花了我大概一天时间去尝试各种搭建方法。 总的来说搭建步骤很简单。 1. 搭建环境Mac OS 10.10.2 CMake 3.2.1 Xcode 6.2 2. 搭建步骤2.1 下载OGRE源代码，https://bitbucket.org/sinbad/ogre 这个步骤需要hg支持">
+<meta name="keywords" content="OGRE, 游戏引擎">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下安装OGRE">
+<meta property="og:url" content="http://sunwayliving.com/2017/10/17/技术-2015-04-14-OGRE-Install/index.html">
+<meta property="og:site_name" content="阳光味道">
+<meta property="og:description" content="OGRE官网提供了各种开发平台下的搭建步骤，并且很多依赖都能够下载到。但是组织不够清晰，需要花一些时间去理清思路。这花了我大概一天时间去尝试各种搭建方法。 总的来说搭建步骤很简单。 1. 搭建环境Mac OS 10.10.2 CMake 3.2.1 Xcode 6.2 2. 搭建步骤2.1 下载OGRE源代码，https://bitbucket.org/sinbad/ogre 这个步骤需要hg支持">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://sunwayliving.com/images/OGRE_directory.png">
+<meta property="og:image" content="http://sunwayliving.com/images/OGRE_generate_deps.png">
+<meta property="og:image" content="http://sunwayliving.com/images/OGRE_compile_deps.png">
+<meta property="og:image" content="http://sunwayliving.com/images/OGRE_generate_src.png">
+<meta property="og:image" content="http://sunwayliving.com/images/OGRE_build_dir.png">
+<meta property="og:image" content="http://sunwayliving.com/images/OGRE_compile_src.png">
+<meta property="og:image" content="http://sunwayliving.com/images/OGRE_sample.png">
+<meta property="og:updated_time" content="2017-10-16T16:32:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.">
+<meta name="twitter:title" content="Mac下安装OGRE">
+<meta name="twitter:description" content="OGRE官网提供了各种开发平台下的搭建步骤，并且很多依赖都能够下载到。但是组织不够清晰，需要花一些时间去理清思路。这花了我大概一天时间去尝试各种搭建方法。 总的来说搭建步骤很简单。 1. 搭建环境Mac OS 10.10.2 CMake 3.2.1 Xcode 6.2 2. 搭建步骤2.1 下载OGRE源代码，https://bitbucket.org/sinbad/ogre 这个步骤需要hg支持">
+<meta name="twitter:image" content="http://sunwayliving.com/images/OGRE_directory.png">
 
 
 
@@ -122,10 +132,10 @@
 
 
 
-  <link rel="canonical" href="http://sunwayliving.com/page/2/"/>
+  <link rel="canonical" href="http://sunwayliving.com/2017/10/17/技术-2015-04-14-OGRE-Install/"/>
 
 
-  <title> Hexo </title>
+  <title> Mac下安装OGRE | 阳光味道 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -146,9 +156,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -158,7 +166,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">阳光味道</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -186,16 +194,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
           </a>
         </li>
       
@@ -273,9 +271,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -295,10 +293,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/10/12/hello-world/" itemprop="url">
-                  Hello World
-                </a>
+                Mac下安装OGRE
               
             
           </h1>
@@ -310,11 +305,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-10-12T10:03:40+08:00" content="2017-10-12">
-              2017-10-12
+            <time itemprop="dateCreated" datetime="2017-10-17T00:32:24+08:00" content="2017-10-17">
+              2017-10-17
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -325,7 +339,7 @@
 
           
           
-             <span id="/2017/10/12/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/10/17/技术-2015-04-14-OGRE-Install/" class="leancloud_visitors" data-flag-title="Mac下安装OGRE">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -347,52 +361,111 @@
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p><a href="http://www.ogre3d.org/" target="_blank" rel="external">OGRE</a>官网提供了各种开发平台下的搭建步骤，并且很多依赖都能够下载到。但是组织不够清晰，需要花一些时间去理清思路。这花了我大概一天时间去尝试各种搭建方法。</p>
+<p>总的来说搭建步骤很简单。</p>
+<h2 id="1-搭建环境"><a href="#1-搭建环境" class="headerlink" title="1. 搭建环境"></a>1. 搭建环境</h2><p>Mac OS 10.10.2</p>
+<p>CMake 3.2.1</p>
+<p>Xcode 6.2</p>
+<h2 id="2-搭建步骤"><a href="#2-搭建步骤" class="headerlink" title="2. 搭建步骤"></a>2. 搭建步骤</h2><h3 id="2-1-下载OGRE源代码，"><a href="#2-1-下载OGRE源代码，" class="headerlink" title="2.1 下载OGRE源代码，"></a>2.1 下载OGRE源代码，</h3><p><a href="https://bitbucket.org/sinbad/ogre" target="_blank" rel="external">https://bitbucket.org/sinbad/ogre</a></p>
+<p>这个步骤需要hg支持，安装一下就可以了，当然git应该也是可以的。<br>下载完成后我们会看到这样一个目录：</p>
+<p><img src="/images/OGRE_directory.png" alt="OGRE目录"></p>
+<h3 id="2-2-下载OGRE的依赖库"><a href="#2-2-下载OGRE的依赖库" class="headerlink" title="2.2 下载OGRE的依赖库"></a>2.2 下载OGRE的依赖库</h3><p><a href="https://bitbucket.org/cabalistic/ogredeps" target="_blank" rel="external">https://bitbucket.org/cabalistic/ogredeps</a></p>
+<p>依赖库放到ogre源代码的根目录下，跟OGREMain同级。</p>
+<h3 id="2-3-生成OGRE依赖库在MAC平台下的工程文件并编译"><a href="#2-3-生成OGRE依赖库在MAC平台下的工程文件并编译" class="headerlink" title="2.3 生成OGRE依赖库在MAC平台下的工程文件并编译"></a>2.3 生成OGRE依赖库在MAC平台下的工程文件并编译</h3><p>使用CMake编译，源代码的路径选择 步骤2.2中的**/ogre/ogredeps 的目录；在ogredeps下面新建build目录，用于放build的结果。</p>
+<p>如下图所示：</p>
+<p><img src="/images/OGRE_generate_deps.png" alt="编译OGRE依赖1"></p>
+<p>编译完成之后，在build目录下，我们会看到 OGREDEPS.xcodeproj 这个文件<br>打开之后，会看到如下图：<br><img src="/images/OGRE_compile_deps.png" alt="编译OGRE依赖2"></p>
+<p>需要分 2个 步骤编译，安装依赖库，</p>
+<p>a. 首先选择 ALL_BUILD编译一次</p>
+<p>b. 然后选择 install编译一次</p>
+<h3 id="2-4-生成OGRE在MAC平台下的工程文件编译并编译"><a href="#2-4-生成OGRE在MAC平台下的工程文件编译并编译" class="headerlink" title="2.4 生成OGRE在MAC平台下的工程文件编译并编译"></a>2.4 生成OGRE在MAC平台下的工程文件编译并编译</h3><p>同样适用CMake编译，路径配置如图所示：</p>
+<p><img src="/images/OGRE_generate_src.png" alt="编译OGRE源代码"></p>
+<p>首次点击Configure之后，会看到全部是红色选项，没有关系。<br>找到其中的 OGRE_DEPENDENCIES_DIR， 把它的值设置成 **/ogre/ogredeps/build/ogredeps，再点击Configure, 会看到顺利完成，然后点击generate。<br>这样编译完成后，打开 **/ogre/build目录，会看到如下结果</p>
+<p><img src="/images/OGRE_build_dir.png" alt="ogre/build_dir"></p>
+<p>其中有一个文件是 OGRE.xcodeproj。打开之后会看到如下图：</p>
+<p><img src="/images/OGRE_compile_src.png" alt="编译OGRE源代码2"></p>
+<p>需要分 3个 步骤编译(跟上面编译依赖类似)，安装依赖库，</p>
+<p>a. 首先选择 ALL_BUILD编译一次</p>
+<p>b. 然后选择 install编译一次</p>
+<p>c. 最后编译SampleBrowser(编译列表往下拖就可以看到这个选项)</p>
+<h2 id="3-搭建完成"><a href="#3-搭建完成" class="headerlink" title="3.搭建完成"></a>3.搭建完成</h2><p>如果顺利编译完成的话，我们在**/ogre/build/bin/debug下面就可以看到SampleBrowser的可执行文件了，打开就可以浏览了。同样你也可以编译出Release版，在Xcode的scheme中将debug改成release再编译一次即可。<br>如图所示：</p>
+<p><img src="/images/OGRE_sample.png" alt="OGRE例子"></p>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/OGRE/" rel="tag">#OGRE</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/技术-2014-12-06-Make-resume-by-LaTeX/" rel="next" title="用ShareLatex写出漂亮的简历">
+                <i class="fa fa-chevron-left"></i> 用ShareLatex写出漂亮的简历
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/17/技术-2016-01-01-Integrate-Physx-Engine-To-GameServer/" rel="prev" title="为服务器集成NVIDIA Physx物理引擎">
+                为服务器集成NVIDIA Physx物理引擎 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div id="gitment-container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+      var gitment = new Gitment({
+        id: Mac下安装OGRE, // 可选。默认为 location.href
+        owner: 'sunwaylive',
+        repo: 'sunwayliving.github.io',
+        oauth: {
+          client_id: '7eaf27b32e4026c75ff3',
+          client_secret: 'e3b9dc1359918831d4e2ce4ffa063e4f7a04554e',
+        },
+      })
+    gitment.render('gitment-container')
+    </script>
+  
 
 
           </div>
@@ -400,6 +473,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -419,36 +496,45 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/sunwei.png"
                alt="sunway" />
           <p class="site-author-name" itemprop="name">sunway</p>
-          <p class="site-description motion-element" itemprop="description">You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.</p>
+          <p class="site-description motion-element" itemprop="description">Game Developer @Tencen.inc</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
-              </a>
+              
             </div>
           
 
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -470,6 +556,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-搭建环境"><span class="nav-number">1.</span> <span class="nav-text">1. 搭建环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-搭建步骤"><span class="nav-number">2.</span> <span class="nav-text">2. 搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-下载OGRE源代码，"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 下载OGRE源代码，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-下载OGRE的依赖库"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 下载OGRE的依赖库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-生成OGRE依赖库在MAC平台下的工程文件并编译"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 生成OGRE依赖库在MAC平台下的工程文件并编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-生成OGRE在MAC平台下的工程文件编译并编译"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 生成OGRE在MAC平台下的工程文件编译并编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-搭建完成"><span class="nav-number">3.</span> <span class="nav-text">3.搭建完成</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -566,6 +663,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

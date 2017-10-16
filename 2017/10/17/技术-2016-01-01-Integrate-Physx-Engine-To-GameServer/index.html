@@ -88,18 +88,18 @@
 <meta name="keywords" content="Physx, 物理引擎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为服务器集成NVIDIA Physx物理引擎">
-<meta property="og:url" content="http://sunwayliving.com/2017/10/12/技术-2016-01-01-Integrate-Physx-Engine-To-GameServer/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://sunwayliving.com/2017/10/17/技术-2016-01-01-Integrate-Physx-Engine-To-GameServer/index.html">
+<meta property="og:site_name" content="阳光味道">
 <meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;PhysX最初是AGEIA公司开发的物理运算引擎，跟Havok，Bullet这两款旗鼓相当，后来2008年AGEIA被NVIDIA收购，NVIDIA将PhysX保密，作为NVIDIA显卡的专利，这逐渐导致了其没落，在封闭了相当长一段时间后，NVIDIA最终将其开源，目前源代码已经托管在了Github上。 PhysX支持平台和引擎如下：  硬件平">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://sunwayliving.com/public/img/posts/technology/PhysX_Capsule_Collider.png">
-<meta property="og:image" content="http://sunwayliving.com/public/img/posts/technology/Unity_PhysX_test_scene.png">
-<meta property="og:image" content="http://sunwayliving.com/public/img/posts/technology/Server_Collider_Render_Scene.png">
-<meta property="og:updated_time" content="2017-10-12T04:45:56.000Z">
+<meta property="og:image" content="http://sunwayliving.com/images/PhysX_Capsule_Collider.png">
+<meta property="og:image" content="http://sunwayliving.com/images/Unity_PhysX_test_scene.png">
+<meta property="og:image" content="http://sunwayliving.com/images/Server_Collider_Render_Scene.png">
+<meta property="og:updated_time" content="2017-10-16T16:33:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为服务器集成NVIDIA Physx物理引擎">
 <meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;PhysX最初是AGEIA公司开发的物理运算引擎，跟Havok，Bullet这两款旗鼓相当，后来2008年AGEIA被NVIDIA收购，NVIDIA将PhysX保密，作为NVIDIA显卡的专利，这逐渐导致了其没落，在封闭了相当长一段时间后，NVIDIA最终将其开源，目前源代码已经托管在了Github上。 PhysX支持平台和引擎如下：  硬件平">
-<meta name="twitter:image" content="http://sunwayliving.com/public/img/posts/technology/PhysX_Capsule_Collider.png">
+<meta name="twitter:image" content="http://sunwayliving.com/images/PhysX_Capsule_Collider.png">
 
 
 
@@ -128,10 +128,10 @@
 
 
 
-  <link rel="canonical" href="http://sunwayliving.com/2017/10/12/技术-2016-01-01-Integrate-Physx-Engine-To-GameServer/"/>
+  <link rel="canonical" href="http://sunwayliving.com/2017/10/17/技术-2016-01-01-Integrate-Physx-Engine-To-GameServer/"/>
 
 
-  <title> 为服务器集成NVIDIA Physx物理引擎 | Hexo </title>
+  <title> 为服务器集成NVIDIA Physx物理引擎 | 阳光味道 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -162,7 +162,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hexo</span>
+      <span class="site-title">阳光味道</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -190,16 +190,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
           </a>
         </li>
       
@@ -311,8 +301,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-10-12T12:45:56+08:00" content="2017-10-12">
-              2017-10-12
+            <time itemprop="dateCreated" datetime="2017-10-17T00:33:00+08:00" content="2017-10-17">
+              2017-10-17
             </time>
           </span>
 
@@ -345,7 +335,7 @@
 
           
           
-             <span id="/2017/10/12/技术-2016-01-01-Integrate-Physx-Engine-To-GameServer/" class="leancloud_visitors" data-flag-title="为服务器集成NVIDIA Physx物理引擎">
+             <span id="/2017/10/17/技术-2016-01-01-Integrate-Physx-Engine-To-GameServer/" class="leancloud_visitors" data-flag-title="为服务器集成NVIDIA Physx物理引擎">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,9 +374,7 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-<p>##1. 安装PhysX</p>
-<p>###1.1 获取GitHub上PhysX源代码的权限</p>
-<p>&#160; &#160; &#160; &#160;PhysX源码并不对所有人开放，需要向Repo的holder申请，操作步骤参考如下：<a href="https://developer.nvidia.com/physx-source-github" target="_blank" rel="external">详细步骤</a></p>
+<h2 id="1-安装PhysX"><a href="#1-安装PhysX" class="headerlink" title="1. 安装PhysX"></a>1. 安装PhysX</h2><h3 id="1-1-获取GitHub上PhysX源代码的权限"><a href="#1-1-获取GitHub上PhysX源代码的权限" class="headerlink" title="1.1 获取GitHub上PhysX源代码的权限"></a>1.1 获取GitHub上PhysX源代码的权限</h3><p>&#160; &#160; &#160; &#160;PhysX源码并不对所有人开放，需要向Repo的holder申请，操作步骤参考如下：<a href="https://developer.nvidia.com/physx-source-github" target="_blank" rel="external">详细步骤</a></p>
 <p>总的来说就是4步：</p>
 <ul>
 <li>注册为nvidia的<a href="http://developer.nvidia.com/registered-developer-programs" target="_blank" rel="external">developer programs</a></li>
@@ -394,37 +382,33 @@
 <li>1个小时后查看github绑定的邮箱，就可以看到通过申请的回复邮件了</li>
 <li>访问Github上<a href="https://github.com/NVIDIAGameWorks/PhysX-3.3" target="_blank" rel="external">PhysX的Repo</a>， 就可以fork,clone下来了</li>
 </ul>
-<p>###1.2. PhysX安装</p>
-<ul>
+<h3 id="1-2-PhysX安装"><a href="#1-2-PhysX安装" class="headerlink" title="1.2. PhysX安装"></a>1.2. PhysX安装</h3><ul>
 <li>源码clone下来之后， 按照根目录下的README.md很容的找到 /PhysX-3.3/PhysXSDK/Source/compile/目录下所需要的平台，编译出对应平台下的静态和动态链接库。</li>
 <li>集成/PhysX-3.3/Include 和 /PhysX-3.3/Lib 和 /PhysX-3.3/Bin到自己的程序使用。</li>
 </ul>
 <p><strong>备注:</strong> </p>
 <p>在根目录下，我们会看到另外一个APEXSDK， 这个是一套读取设计师通过<a href="https://developer.nvidia.com/gameworksdownload#?dn=physx-lab-1-3-0" target="_blank" rel="external">PhysX Lab</a>等工具导出的设计的资源的API(资源有自己定义的格式如 “.apb”).</p>
 <p>例如：场景中物体的摧毁效果，布料，粒子等效果，比方说其中有一个模块： Destruction Module， 有兴趣的可以看一下<a href="https://developer.nvidia.com/apex-destruction-physxlab-tutorials" target="_blank" rel="external">这套视频</a>，半个小时左右，就了解了，这个不是这篇文章的重点。</p>
-<p>##2. Unity Editor中导出物理场景的配置</p>
-<p>&#160; &#160; &#160; &#160;Unity中基本的Collider分为：Box Collider, Sphere Collider, Capsule Collider,以及针对精度要求较高的Mesh Collider，还有其它的一些特定应用场景下会用到的诸如Wheel Collider，Terrain Collider等等。</p>
+<h2 id="2-Unity-Editor中导出物理场景的配置"><a href="#2-Unity-Editor中导出物理场景的配置" class="headerlink" title="2. Unity Editor中导出物理场景的配置"></a>2. Unity Editor中导出物理场景的配置</h2><p>&#160; &#160; &#160; &#160;Unity中基本的Collider分为：Box Collider, Sphere Collider, Capsule Collider,以及针对精度要求较高的Mesh Collider，还有其它的一些特定应用场景下会用到的诸如Wheel Collider，Terrain Collider等等。</p>
 <p>&#160; &#160; &#160; &#160;我们今天主要目的搭建好整个流程，只用基本类型的Collider作为例子。</p>
 <p>&#160; &#160; &#160; &#160;我们前后台都统一使用<a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="external">Google Proto buffers</a>定义场景导出的格式，以二进制格式序列化和反序列化场景。</p>
-<p>###2.1 定义Scene.proto<br>&#160; &#160; &#160; &#160;整个proto代码贴在了下方，我们简单说明一下，很容易就明白了。</p>
+<h3 id="2-1-定义Scene-proto"><a href="#2-1-定义Scene-proto" class="headerlink" title="2.1 定义Scene.proto"></a>2.1 定义Scene.proto</h3><p>&#160; &#160; &#160; &#160;整个proto代码贴在了下方，我们简单说明一下，很容易就明白了。</p>
 <p>每一个战斗场景导出一个文件，格式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">message U3DPhysxScene</div><div class="line">&#123;</div><div class="line">    optional int32 id                         = 1;</div><div class="line">    optional string scene_name                = 2;</div><div class="line">    repeated U3DPhysxBox box_collider         = 3;</div><div class="line">    repeated U3DPhysxSphere sphere_collider   = 4;</div><div class="line">    repeated U3DPhysxCapsule capsule_collider = 5;</div><div class="line">    repeated U3DPhysxMesh mesh_collider       = 6;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>一个场景由若干个U3DPhysxBox，U3DPhysxSphere，U3DPhysxCapsule，U3DPhysxMesh组成.</p>
 <p>每个collider的定义很容易理解， 其中Capsule Collider在PhysX的定义如下：</p>
-<p><img src="/public/img/posts/technology/PhysX_Capsule_Collider.png" alt="PhysX Capsule Collider定义"></p>
+<p><img src="/images/PhysX_Capsule_Collider.png" alt="PhysX Capsule Collider定义"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">package killer.proto;</div><div class="line"></div><div class="line">enum ColliderType</div><div class="line">&#123;</div><div class="line">	BOX     = 1;</div><div class="line">	SPHERE  = 2;</div><div class="line">	CAPSULE = 3;</div><div class="line">	MESH    = 4;</div><div class="line">&#125;</div><div class="line"></div><div class="line">message Position</div><div class="line">&#123;</div><div class="line">	optional double x = 1 [default = 0];</div><div class="line">	optional double y = 2 [default = 0];</div><div class="line">	optional double z = 3 [default = 0];</div><div class="line">&#125;</div><div class="line"></div><div class="line">message U3DPhysxScene</div><div class="line">&#123;</div><div class="line">	optional int32 id                         = 1;</div><div class="line">	optional string scene_name                = 2;</div><div class="line">	repeated U3DPhysxBox box_collider         = 3;</div><div class="line">	repeated U3DPhysxSphere sphere_collider   = 4;</div><div class="line">	repeated U3DPhysxCapsule capsule_collider = 5;</div><div class="line">	repeated U3DPhysxMesh mesh_collider       = 6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">message U3DPhysxSphere</div><div class="line">&#123;</div><div class="line">	optional int32 id          = 1;</div><div class="line">	optional ColliderType type = 2;</div><div class="line">	optional Position pos      = 3;</div><div class="line">	optional double radius     = 4;</div><div class="line">&#125;</div><div class="line"></div><div class="line">message U3DPhysxBox</div><div class="line">&#123;</div><div class="line">	optional int32 id          = 1;</div><div class="line">	optional ColliderType type = 2;</div><div class="line">	optional Position pos      = 3;</div><div class="line">	optional double x_extents  = 4;</div><div class="line">	optional double y_extents  = 5;</div><div class="line">	optional double z_extents  = 6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">message U3DPhysxCapsule</div><div class="line">&#123;</div><div class="line">	optional int32 id          = 1;</div><div class="line">	optional ColliderType type = 2;</div><div class="line">	optional Position pos      = 3;</div><div class="line">	optional double raduis     = 4;</div><div class="line">	optional double height     = 5;</div><div class="line">&#125;</div><div class="line"></div><div class="line">message U3DPhysxMesh</div><div class="line">&#123;</div><div class="line">	optional int32 id           = 1;</div><div class="line">	optional ColliderType type  = 2;</div><div class="line">	optional int32 vertex_count = 3;</div><div class="line">	repeated Position vertices  = 4;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###2.2 修改Scene.proto</p>
-<ul>
+<h3 id="2-2-修改Scene-proto"><a href="#2-2-修改Scene-proto" class="headerlink" title="2.2 修改Scene.proto"></a>2.2 修改Scene.proto</h3><ul>
 <li>进入 Editor/BuildProtocol/Protocal， 修改Scene.proto, 然后运行 Editor/BuildProtocol/build.bat，这样protobuf会在 Editor/ProtoGeneratedScrips 目录下生成新的Scene.cs。</li>
 <li>然后刷新Unity，修改 Editor/SceneExtractor.cs 脚本使用新的Scene.proto的字段。</li>
 </ul>
-<p>###2.3 代码下载并运行<br>整个Unity Editor的代码(c#) 和 依赖的第三方库(proto-net)，都已经打包好了.</p>
+<h3 id="2-3-代码下载并运行"><a href="#2-3-代码下载并运行" class="headerlink" title="2.3 代码下载并运行"></a>2.3 代码下载并运行</h3><p>整个Unity Editor的代码(c#) 和 依赖的第三方库(proto-net)，都已经打包好了.</p>
 <p>下载下来直接放到Unity的Assets目录下，刷新unity.</p>
 <p>在菜单栏中： Tools-&gt;SceneExtractor-&gt;ExtractColliders即可导出当前打开的场景为一份物理配置给后台使用。</p>
 <p>代码托管在了Github上: <a href="https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/1.ExportScenesInUnity" target="_blank" rel="external">https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/1.ExportScenesInUnity</a></p>
-<p>#3. 服务器端导入场景的配置文件，生成物理场景<br>因为后台在跑的服务器没有显卡，所以我们服务器端的工作，分为如下两步</p>
-<p>##3.1 在windows平台上，反序列化出场景，用OpenGL渲染测试正确性</p>
-<p>###1. 这部分工程代码也封装好了，可以下载下来直接跑<br>代码托管在了Github上: <a href="https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/2.RunPhysicsOnWindows" target="_blank" rel="external">https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/2.RunPhysicsOnWindows</a></p>
+<h1 id="3-服务器端导入场景的配置文件，生成物理场景"><a href="#3-服务器端导入场景的配置文件，生成物理场景" class="headerlink" title="3. 服务器端导入场景的配置文件，生成物理场景"></a>3. 服务器端导入场景的配置文件，生成物理场景</h1><p>因为后台在跑的服务器没有显卡，所以我们服务器端的工作，分为如下两步</p>
+<h2 id="3-1-在windows平台上，反序列化出场景，用OpenGL渲染测试正确性"><a href="#3-1-在windows平台上，反序列化出场景，用OpenGL渲染测试正确性" class="headerlink" title="3.1 在windows平台上，反序列化出场景，用OpenGL渲染测试正确性"></a>3.1 在windows平台上，反序列化出场景，用OpenGL渲染测试正确性</h2><h3 id="1-这部分工程代码也封装好了，可以下载下来直接跑"><a href="#1-这部分工程代码也封装好了，可以下载下来直接跑" class="headerlink" title="1. 这部分工程代码也封装好了，可以下载下来直接跑"></a>1. 这部分工程代码也封装好了，可以下载下来直接跑</h3><p>代码托管在了Github上: <a href="https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/2.RunPhysicsOnWindows" target="_blank" rel="external">https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/2.RunPhysicsOnWindows</a></p>
 <p>平台：windows7 x64 + Visual Studio 2013 + OpenGL</p>
 <p>语言： C++</p>
 <p>具体每个文件夹的含义以及如何导proto，请看工程根目录下的README.md文件。</p>
@@ -433,8 +417,7 @@
 <li>如果没有安装OpenGL，请将 /external/GL 目录拷贝到 **/Program Files(x86)/Microsoft Visual Studio 12.0/VC/include/GL。对于Visual Studio的其它版本，放到对应的目录下去就好了。</li>
 <li>同样如果在链接阶段报lib文件找不到的话，将external/*.lib 这3个lib放到 **/Program Files(x86)/Microsoft Visual Studio 12.0/VC/lib/amd64 这个目录下去。</li>
 </ul>
-<p>###2. 代码结构说明</p>
-<ul>
+<h3 id="2-代码结构说明"><a href="#2-代码结构说明" class="headerlink" title="2. 代码结构说明"></a>2. 代码结构说明</h3><ul>
 <li>PhysicsSceneManager是<strong>核心</strong>的类，管理了初始化PhysX，导入场景等核心功能</li>
 <li>PhysicsSceneRender和ServerCooperationRender负责渲染</li>
 <li>PhysicsSceneCamera是控制相机镜头的类</li>
@@ -443,15 +426,14 @@
 <p>我们打开PhysicsSceneManager.cpp, 看到最重要的两个函数： InitiPhysics()和InitiSceneFromFile().</p>
 <p>需要注意的是m_foundation， m_physics是在程序一启动的时候就必须初始化的。</p>
 <p>其它的代码配合PhysX的Documentation看，很容易就看明白了。</p>
-<p>##3.2 关闭OpenGL渲染，将Simulation部分的代码放到Linux上去<br>&#160; &#160; &#160; &#160;代码托管在了Github上: <a href="https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/3.RunPhysicsOnLinux" target="_blank" rel="external">https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/3.RunPhysicsOnLinux</a></p>
+<h2 id="3-2-关闭OpenGL渲染，将Simulation部分的代码放到Linux上去"><a href="#3-2-关闭OpenGL渲染，将Simulation部分的代码放到Linux上去" class="headerlink" title="3.2 关闭OpenGL渲染，将Simulation部分的代码放到Linux上去"></a>3.2 关闭OpenGL渲染，将Simulation部分的代码放到Linux上去</h2><p>&#160; &#160; &#160; &#160;代码托管在了Github上: <a href="https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/3.RunPhysicsOnLinux" target="_blank" rel="external">https://github.com/sunwaylive/UsePhysXWithUnity/tree/master/3.RunPhysicsOnLinux</a></p>
 <p>&#160; &#160; &#160; &#160;最后关闭 <strong>RENDERFORTEST</strong> 宏， 并删除PhysicsSceneRender.h, PhysicsSceneRender.cpp和SeverCooperationRender.cpp，并将对代码进行简单的封装，就可以放到服务器上运行了。</p>
 <p>这一部分的代码部分可以在这里下载，但是linux下的physx环境配置需要自行安装，安装过程也很简单， 不能直接make。</p>
 <p>目录下有一个可执行的二进制文件 PhysXTestBinary，是我们编译出来测试的。</p>
-<p>#4.运行测试</p>
-<ol>
-<li><p>Unity制作测试场景<br><img src="/public/img/posts/technology/Unity_PhysX_test_scene.png" alt="Unity PhysX Test Scene"></p>
+<h1 id="4-运行测试"><a href="#4-运行测试" class="headerlink" title="4.运行测试"></a>4.运行测试</h1><ol>
+<li><p>Unity制作测试场景<br><img src="/images/Unity_PhysX_test_scene.png" alt="Unity PhysX Test Scene"></p>
 </li>
-<li><p>在Windows下服务器端渲染的场景<br><img src="/public/img/posts/technology/Server_Collider_Render_Scene.png" alt="Server Collider Render Scene"></p>
+<li><p>在Windows下服务器端渲染的场景<br><img src="/images/Server_Collider_Render_Scene.png" alt="Server Collider Render Scene"></p>
 </li>
 <li><p>在Linux服务器上，利用PhysX的Raycast的API， 可以正确检测其中一对点可以到达， 另外一对点由于中间Box collider的阻挡无法达到。</p>
 </li>
@@ -488,13 +470,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/12/读书-2015-01-29-Book-List-2015/" rel="next" title="2015年阅读书单">
-                <i class="fa fa-chevron-left"></i> 2015年阅读书单
+              <a href="/2017/10/17/技术-2015-04-14-OGRE-Install/" rel="next" title="Mac下安装OGRE">
+                <i class="fa fa-chevron-left"></i> Mac下安装OGRE
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/17/爱好-2015-03-28-graduation-trip-visa-application/" rel="prev" title="环游欧洲毕业旅行之申请申根签证">
+                环游欧洲毕业旅行之申请申根签证 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -575,29 +561,29 @@
                src="/images/sunwei.png"
                alt="sunway" />
           <p class="site-author-name" itemprop="name">sunway</p>
-          <p class="site-description motion-element" itemprop="description">You got a dream, you gotta protect it. People can’t do something themselves,they wanna tell you you can’t do it.If you want something, go get it. Period.</p>
+          <p class="site-description motion-element" itemprop="description">Game Developer @Tencen.inc</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
-              </a>
+              
             </div>
           
 
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -626,7 +612,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装PhysX"><span class="nav-number">1.</span> <span class="nav-text">1. 安装PhysX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-获取GitHub上PhysX源代码的权限"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 获取GitHub上PhysX源代码的权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-PhysX安装"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. PhysX安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Unity-Editor中导出物理场景的配置"><span class="nav-number">2.</span> <span class="nav-text">2. Unity Editor中导出物理场景的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-定义Scene-proto"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 定义Scene.proto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-修改Scene-proto"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 修改Scene.proto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-代码下载并运行"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 代码下载并运行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-服务器端导入场景的配置文件，生成物理场景"><span class="nav-number"></span> <span class="nav-text">3. 服务器端导入场景的配置文件，生成物理场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-在windows平台上，反序列化出场景，用OpenGL渲染测试正确性"><span class="nav-number">1.</span> <span class="nav-text">3.1 在windows平台上，反序列化出场景，用OpenGL渲染测试正确性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-这部分工程代码也封装好了，可以下载下来直接跑"><span class="nav-number">1.1.</span> <span class="nav-text">1. 这部分工程代码也封装好了，可以下载下来直接跑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-代码结构说明"><span class="nav-number">1.2.</span> <span class="nav-text">2. 代码结构说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-关闭OpenGL渲染，将Simulation部分的代码放到Linux上去"><span class="nav-number">2.</span> <span class="nav-text">3.2 关闭OpenGL渲染，将Simulation部分的代码放到Linux上去</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-运行测试"><span class="nav-number"></span> <span class="nav-text">4.运行测试</span></a></div>
             
           </div>
         </section>
